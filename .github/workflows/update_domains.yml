@@ -2,29 +2,47 @@ name: Update M3U Domains and IPs
 
 on:
   schedule:
-    - cron: "0 2 */3 * *" 
+    - cron: '0 */6 * * *'  # 每 6 小时运行一次
   workflow_dispatch:  # 允许手动触发
 
 jobs:
-  update:
+  update_domains_and_ips:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 检出代码
+      - name: 检出代码
         uses: actions/checkout@v4
 
-      - name: 🛠️ 设置 Python 环境
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.x"
+      - name: 下载多个 M3U 直播源
+        run: |
+          # 定义 M3U 链接
+          m3u_urls=(
+            "https://raw.githubusercontent.com/YueChan/Live/main/Global.m3u"
+          )
 
-      - name: 🔍 安装依赖
-        run: pip install requests
+          # 下载所有 M3U 文件
+          for url in "${m3u_urls[@]}"; do
+            curl -O $url
+          done
 
-      - name: 🚀 运行 M3U 解析脚本
-        run: python parse_m3u.py
+      - name: 解析 M3U 获取域名和 IP
+        run: |
+          # 合并所有 M3U 文件内容，提取域名和 IP
+          cat *.m3u | grep -Eo 'https?://[^"]+' | awk -F/ '{print $3}' | sort -u > all_hosts.txt
+          
+          # 提取 IP 和 域名
+          grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$' all_hosts.txt > ips.txt
+          grep -Ev '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$' all_hosts.txt > domains.txt
 
-      - name: 📤 提交更新
+          # 生成 YAML 格式 - 域名
+          echo "payload:" > domains.yml
+          sed 's/^/  - "/; s/$/"/' domains.txt >> domains.yml
+
+          # 生成 YAML 格式 - IP
+          echo "payload:" > ips.yml
+          sed 's/^/  - "/; s/$/"/' ips.txt >> ips.yml
+
+      - name: 提交更改
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
@@ -32,5 +50,5 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
           git add domains.yml ips.yml
-          git commit -m "🔄 自动更新 M3U 域名和 IP" || exit 0
+          git commit -m "Update domains and IPs from multiple M3U sources" || exit 0
           git push origin HEAD:main
