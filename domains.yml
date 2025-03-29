@@ -1,9 +1,9 @@
 payload:
-- 91.247.68.229
+- 91.247.68.229:8000
 - appletree-mytimeau-samsung.amagi.tv
 - bcovlive-a.akamaihd.net
 - cdn-apse1-prod.tsv2.amagi.tv
-- cord-cutter.net
+- cord-cutter.net:8080
 - d2e1asnsl7br7b.cloudfront.net
 - d4ybyqrhce41r.cloudfront.net
 - d7x8z4yuq42qn.cloudfront.net
