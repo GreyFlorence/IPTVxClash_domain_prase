@@ -73,11 +73,13 @@ def main():
     
     # Convert sets to sorted lists
     domains_list = sorted(list(all_domains))
-    ips_list = sorted(list(all_ips))
+    
+    # Convert IPs to CIDR format (append /32 to each IP)
+    ips_cidr_list = sorted([f"{ip}/32" for ip in all_ips])
     
     # Prepare YAML content
     domains_yaml = {'payload': domains_list}
-    ips_yaml = {'payload': ips_list}
+    ips_yaml = {'payload': ips_cidr_list}
     
     # Write domains to domains.yml
     with open('domains.yml', 'w') as f:
@@ -87,7 +89,7 @@ def main():
     with open('ips.yml', 'w') as f:
         yaml.dump(ips_yaml, f, default_flow_style=False)
     
-    print(f"Extracted {len(domains_list)} domains and {len(ips_list)} IPs")
+    print(f"Extracted {len(domains_list)} domains and {len(ips_cidr_list)} IPs")
 
 if __name__ == "__main__":
     main()
