@@ -1,7 +1,5 @@
 # M3U Domain and IP Extractor
 
-![GitHub Actions Status](https://github.com/yourusername/repo-name/workflows/M3U%20Domain%20and%20IP%20Extractor/badge.svg)
-
 A GitHub Actions-powered tool that automatically extracts domains and IP addresses from M3U live stream sources and generates separate YAML files for each.
 
 ## 🌟 Features
