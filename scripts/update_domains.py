@@ -1,39 +1,46 @@
-import requests
-import yaml
 import re
+import requests
 
-# M3U 直播源列表（修改为你的源）
+# M3U 直播源 URL 列表
 M3U_URLS = [
-    "https://raw.githubusercontent.com/YueChan/Live/main/Global.m3u",
-    "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/%E4%B8%93%E5%8C%BA/%E2%99%AA%E6%B8%AF%E6%BE%B3%E5%8F%B0.txt"
+    "https://example.com/playlist1.m3u",
+    "https://example.com/playlist2.m3u"
 ]
 
-DOMAIN_PATTERN = re.compile(r'https?://([^:/]+)')
+# 正则表达式匹配域名和 IP 地址
+DOMAIN_PATTERN = re.compile(r"https?://([^:/\s]+)")
+IP_PATTERN = re.compile(r"https?://(\d+\.\d+\.\d+\.\d+)")
 
-def extract_domains(m3u_urls):
-    """ 从多个 M3U 文件提取域名并去重 """
-    domains = set()
+domains = set()
+ips = set()
 
-    for url in m3u_urls:
-        try:
-            response = requests.get(url, timeout=10)
-            response.raise_for_status()
-            domains.update(DOMAIN_PATTERN.findall(response.text))
-        except requests.RequestException as e:
-            print(f"无法获取 {url}: {e}")
+# 解析 M3U 文件
+for url in M3U_URLS:
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        lines = response.text.split("\n")
 
-    return sorted(domains)
+        for line in lines:
+            match_domain = DOMAIN_PATTERN.search(line)
+            match_ip = IP_PATTERN.search(line)
+            
+            if match_domain:
+                domains.add(match_domain.group(1))
+            if match_ip:
+                ips.add(match_ip.group(1))
 
-def update_yaml(domains):
-    """ 更新 domains.yml 文件 """
-    data = {"payload": domains}
+    except Exception as e:
+        print(f"⚠️  无法获取 {url}: {e}")
 
-    with open("domains.yml", "w", encoding="utf-8") as f:
-        yaml.dump(data, f, allow_unicode=True, default_flow_style=False)
+# 生成 YAML 文件
+def save_yaml(filename, data):
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write("payload:\n")
+        for item in sorted(data):
+            f.write(f"  - '{item}'\n")
 
-def main():
-    domains = extract_domains(M3U_URLS)
-    update_yaml(domains)
+save_yaml("domains.yml", domains)
+save_yaml("ips.yml", ips)
 
-if __name__ == "__main__":
-    main()
+print("✅ 提取完成：domains.yml & ips.yml 已生成！")
