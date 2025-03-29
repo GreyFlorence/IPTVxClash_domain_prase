@@ -3,8 +3,7 @@ import requests
 
 # M3U 直播源 URL 列表
 M3U_URLS = [
-    "https://example.com/playlist1.m3u",
-    "https://example.com/playlist2.m3u"
+    "https://raw.githubusercontent.com/YueChan/Live/main/Global.m3u"
 ]
 
 # 正则表达式匹配域名和 IP 地址
