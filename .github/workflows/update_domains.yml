@@ -15,50 +15,30 @@ jobs:
 
       - name: 下载多个 M3U 直播源
         run: |
-          # 定义 M3U 链接
-          m3u_urls=(
+          # 定义 M3U 直播源 URL 列表
+          M3U_URLS=( 
             "https://raw.githubusercontent.com/YueChan/Live/main/Global.m3u"
           )
-
-          # 下载所有 M3U 文件
-          for url in "${m3u_urls[@]}"; do
-            echo "Downloading $url"
-            curl -O $url
+          
+          # 下载所有的 M3U 直播源
+          for url in "${M3U_URLS[@]}"; do
+            curl -o playlist.m3u "$url"
+            cat playlist.m3u >> combined_playlist.m3u
           done
 
       - name: 解析 M3U 获取域名和 IP
         run: |
-          # 检查是否下载了文件
-          echo "检查 M3U 文件是否下载成功"
-          ls *.m3u || exit 1  # 如果没有下载到 .m3u 文件，退出并报错
-
-          # 合并所有 M3U 文件内容，提取域名和 IP
-          echo "解析 M3U 文件"
-          cat *.m3u | grep -Eo 'https?://[^"]+' | awk -F/ '{print $3}' | sort -u > all_hosts.txt
-
-          # 检查解析结果
-          echo "检查解析后的域名和 IP"
-          cat all_hosts.txt || exit 1  # 如果解析结果为空，退出并报错
-
-          # 提取 IP 和 域名
+          # 提取 URL
+          grep -Eo 'https?://[^"]+' combined_playlist.m3u | awk -F/ '{print $3}' | sort -u > all_hosts.txt
+          
+          # 提取域名和 IP
           grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$' all_hosts.txt > ips.txt
           grep -Ev '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$' all_hosts.txt > domains.txt
 
-          # 检查是否有 IP 和 域名
-          if [ ! -s ips.txt ]; then
-            echo "没有找到 IP 地址"
-          fi
-          if [ ! -s domains.txt ]; then
-            echo "没有找到域名"
-          fi
-
-          # 生成 YAML 格式 - 域名
-          echo "生成域名列表"
+          # 生成 YAML 格式
           echo "payload:" > domains.yml
           sed 's/^/  - "/; s/$/"/' domains.txt >> domains.yml
 
-          # 生成 YAML 格式 - IP
-          echo "生成IP地址列表"
           echo "payload:" > ips.yml
           sed 's/^/  - "/; s/$/"/' ips.txt >> ips.yml
 
@@ -68,7 +48,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
           git add domains.yml ips.yml
           git commit -m "Update domains and IPs from multiple M3U sources" || exit 0
           git push origin HEAD:main
