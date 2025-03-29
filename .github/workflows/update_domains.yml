@@ -33,6 +33,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add domains.yml ips.yml
-          git commit -m "Update domains and IPs from M3U sources" || echo "No changes to commit"
+          git add domains.yml ips.yml fujian_iptv.txt
+          git commit -m "Update domains and IPs from M3U sources and FJ channels" || echo "No changes to commit"
           git push
