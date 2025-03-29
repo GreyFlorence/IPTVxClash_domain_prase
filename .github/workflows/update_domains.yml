@@ -1,31 +1,35 @@
-name: Update M3U Domains and IPs
+name: M3U Domain and IP Extractor
 
 on:
   schedule:
-    - cron: '0 2 1/3 * *'  # 每小时运行一次
-  workflow_dispatch:  # 允许手动触发
+    - cron: '0 0 1/3 * *'  # Run daily at midnight UTC
+  workflow_dispatch:  # Allow manual triggering
 
 jobs:
-  update-domains-and-ips:
+  extract-domains-and-ips:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: 检出仓库
+      - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: 设置 Python 环境
+        
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
-
-      - name: 安装依赖
-        run: pip install requests pyyaml
-
-      - name: 获取并解析 M3U 域名和 IP 地址
-        run: python scripts/update_domains.py
-
-      - name: 提交更改
+          python-version: '3.11'
+          
+      - name: Install dependencies
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet || (git add domains.yml ips.yml && git commit -m "Update domain and IP list" && git push)
+          python -m pip install --upgrade pip
+          pip install requests pyyaml
+          
+      - name: Fetch M3U sources and extract domains/IPs
+        run: python .github/scripts/extract_domains_ips.py
+        
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add domains.yml ips.yml
+          git commit -m "Update domains and IPs from M3U sources" || echo "No changes to commit"
+          git push
