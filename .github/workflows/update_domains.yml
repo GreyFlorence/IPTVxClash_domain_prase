@@ -1,4 +1,4 @@
-name: M3U Domain and IP Extractor
+name: M3U Domain and IP Extractor and Channels Modification
 
 on:
   schedule:
@@ -28,11 +28,14 @@ jobs:
       
       - name: 提取福建频道并保存
         run: python scripts/extract_fujian_channels.py
-      
+        
+      - name: 添加标题到港澳台频道文件
+        run: python scripts/add_header_to_hkmotw.py
+        
       - name: Commit and push changes
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add domains.yml ips.yml fujian_iptv.txt
+          git add domains.yml ips.yml fujian_iptv.txt HKMOTW.txt
           git commit -m "Update domains and IPs from M3U sources and FJ channels" || echo "No changes to commit"
           git push
