@@ -12,6 +12,7 @@ from urllib.parse import urlparse
 # M3U sources - replace with your actual sources
 M3U_SOURCES = [
     "https://raw.githubusercontent.com/YueChan/Live/main/Global.m3u",
+    "https://raw.githubusercontent.com/YueChan/Live/main/Adult.m3u",
     # Add more M3U sources as needed
 ]
 
