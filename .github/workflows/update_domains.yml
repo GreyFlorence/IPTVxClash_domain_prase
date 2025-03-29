@@ -24,7 +24,7 @@ jobs:
           pip install requests pyyaml
           
       - name: Fetch M3U sources and extract domains/IPs
-        run: python .github/scripts/extract_domains_ips.py
+        run: python scripts/extract_domains_ips.py
         
       - name: Commit and push changes
         run: |
