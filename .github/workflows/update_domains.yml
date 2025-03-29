@@ -1,0 +1,31 @@
+name: Update M3U Domains
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # 每小时运行一次
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  update-domains:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: 安装依赖
+        run: pip install requests pyyaml
+
+      - name: 获取并解析 M3U 域名
+        run: python scripts/update_domains.py
+
+      - name: 提交更改
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet || (git add domains.yml && git commit -m "Update domain list" && git push)
