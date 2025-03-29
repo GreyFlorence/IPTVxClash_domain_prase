@@ -8,11 +8,12 @@ M3U_URLS = [
     "https://raw.githubusercontent.com/YueChan/Live/main/Global.m3u"
 ]
 
-# 正则表达式：提取域名
+# 域名和 IP 匹配模式
 DOMAIN_PATTERN = re.compile(r'https?://([^:/]+)')
+IP_PATTERN = re.compile(r'\b(?:\d{1,3}\.){3}\d{1,3}\b')
 
 def extract_domains_and_ips(m3u_urls):
-    """从多个 M3U 文件提取域名和 IP 地址，并去重"""
+    """ 从多个 M3U 文件提取域名和 IP 地址，并去重 """
     domains = set()
     ips = set()
 
@@ -25,36 +26,23 @@ def extract_domains_and_ips(m3u_urls):
             domains.update(DOMAIN_PATTERN.findall(response.text))
 
             # 提取 IP 地址
-            for domain in domains:
-                try:
-                    ip = socket.gethostbyname(domain)
-                    ips.add(ip)
-                except socket.gaierror:
-                    continue
+            ips.update(IP_PATTERN.findall(response.text))
         except requests.RequestException as e:
             print(f"无法获取 {url}: {e}")
 
     return sorted(domains), sorted(ips)
 
-def update_yaml(domains, ips):
-    """更新 domains.yml 和 ips.yml 文件"""
-    
-    # 更新域名文件
-    domain_data = {"payload": domains}
-    with open("domains.yml", "w", encoding="utf-8") as domain_file:
-        yaml.dump(domain_data, domain_file, allow_unicode=True, default_flow_style=False)
-
-    # 更新 IP 文件
-    ip_data = {"payload": ips}
-    with open("ips.yml", "w", encoding="utf-8") as ip_file:
-        yaml.dump(ip_data, ip_file, allow_unicode=True, default_flow_style=False)
+def update_yaml(file_name, data):
+    """ 更新 YAML 文件 """
+    with open(file_name, "w", encoding="utf-8") as f:
+        yaml.dump({"payload": data}, f, allow_unicode=True, default_flow_style=False)
 
 def main():
-    # 获取域名和 IP 地址
     domains, ips = extract_domains_and_ips(M3U_URLS)
-    
-    # 更新 YAML 文件
-    update_yaml(domains, ips)
+
+    # 更新域名和 IP 文件
+    update_yaml("domains.yml", domains)
+    update_yaml("ips.yml", ips)
 
 if __name__ == "__main__":
     main()
