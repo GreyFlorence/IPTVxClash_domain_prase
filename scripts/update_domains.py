@@ -1,47 +1,93 @@
-import requests
-import yaml
-import re
+#!/usr/bin/env python3
+"""
+Script to parse M3U playlists, extract domains and IPs, and save them to YAML files.
+"""
 
-# M3U 直播源列表（修改为你的源）
-M3U_URLS = [
-  "https://raw.githubusercontent.com/YueChan/Live/main/Global.m3u"
+import re
+import os
+import yaml
+import requests
+from urllib.parse import urlparse
+
+# M3U sources - replace with your actual sources
+M3U_SOURCES = [
+    "https://raw.githubusercontent.com/YueChan/Live/main/Global.m3u",
+    # Add more M3U sources as needed
 ]
 
-DOMAIN_PATTERN = re.compile(r'https?://([^:/]+)')
-IP_PATTERN = re.compile(r'\b(?:\d{1,3}\.){3}\d{1,3}\b')
+def is_valid_domain(domain):
+    """Check if a string is a valid domain name."""
+    domain_pattern = re.compile(
+        r'^(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$'
+    )
+    return bool(domain_pattern.match(domain))
 
-def extract_domains_and_ips(m3u_urls):
-    """ 从多个 M3U 文件提取域名和 IP 并去重 """
+def is_valid_ip(ip):
+    """Check if a string is a valid IPv4 address."""
+    ip_pattern = re.compile(
+        r'^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+    )
+    return bool(ip_pattern.match(ip))
+
+def extract_domains_and_ips(m3u_content):
+    """Extract domains and IPs from M3U content."""
     domains = set()
     ips = set()
+    
+    # Regular expression to find URLs in the M3U content
+    url_pattern = re.compile(r'https?://([^:/\s]+)')
+    
+    # Find all matches
+    for match in url_pattern.finditer(m3u_content):
+        host = match.group(1)
+        
+        if is_valid_ip(host):
+            ips.add(host)
+        elif is_valid_domain(host):
+            domains.add(host)
+    
+    return list(domains), list(ips)
 
-    for url in m3u_urls:
-        try:
-            response = requests.get(url, timeout=10)
-            response.raise_for_status()
-
-            # 提取域名和IP
-            domains.update(DOMAIN_PATTERN.findall(response.text))
-            ips.update(IP_PATTERN.findall(response.text))
-
-        except requests.RequestException as e:
-            print(f"无法获取 {url}: {e}")
-
-    return sorted(domains), sorted(ips)
-
-def update_yaml(domains, ips):
-    """ 更新 domains.yml 和 ips.yml 文件 """
-    # 写入域名
-    with open("domains.yml", "w", encoding="utf-8") as f:
-        yaml.dump({"payload": domains}, f, allow_unicode=True, default_flow_style=False)
-
-    # 写入 IP 地址
-    with open("ips.yml", "w", encoding="utf-8") as f:
-        yaml.dump({"payload": ips}, f, allow_unicode=True, default_flow_style=False)
+def fetch_m3u_content(url):
+    """Fetch M3U content from a URL."""
+    try:
+        response = requests.get(url, timeout=30)
+        response.raise_for_status()
+        return response.text
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching M3U from {url}: {e}")
+        return ""
 
 def main():
-    domains, ips = extract_domains_and_ips(M3U_URLS)
-    update_yaml(domains, ips)
+    all_domains = set()
+    all_ips = set()
+    
+    for m3u_url in M3U_SOURCES:
+        print(f"Fetching M3U from: {m3u_url}")
+        m3u_content = fetch_m3u_content(m3u_url)
+        
+        if m3u_content:
+            domains, ips = extract_domains_and_ips(m3u_content)
+            all_domains.update(domains)
+            all_ips.update(ips)
+    
+    # Convert sets to sorted lists
+    domains_list = sorted(list(all_domains))
+    ips_list = sorted(list(all_ips))
+    
+    # Prepare YAML content
+    domains_yaml = {'payload': domains_list}
+    ips_yaml = {'payload': ips_list}
+    
+    # Write domains to domains.yml
+    with open('domains.yml', 'w') as f:
+        yaml.dump(domains_yaml, f, default_flow_style=False)
+    
+    # Write IPs to ips.yml
+    with open('ips.yml', 'w') as f:
+        yaml.dump(ips_yaml, f, default_flow_style=False)
+    
+    print(f"Extracted {len(domains_list)} domains and {len(ips_list)} IPs")
 
 if __name__ == "__main__":
     main()
