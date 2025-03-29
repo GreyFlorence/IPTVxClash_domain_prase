@@ -4,8 +4,8 @@ import re
 
 # M3U 直播源列表（修改为你的源）
 M3U_URLS = [
-    "https://example.com/source1.m3u",
-    "https://example.com/source2.m3u"
+    "https://raw.githubusercontent.com/YueChan/Live/main/Global.m3u",
+    "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/%E4%B8%93%E5%8C%BA/%E2%99%AA%E6%B8%AF%E6%BE%B3%E5%8F%B0.txt"
 ]
 
 DOMAIN_PATTERN = re.compile(r'https?://([^:/]+)')
