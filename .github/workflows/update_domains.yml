@@ -25,7 +25,10 @@ jobs:
           
       - name: Fetch M3U sources and extract domains/IPs
         run: python scripts/extract_domains_ips.py
-        
+      
+      - name: 提取福建频道并保存
+        run: python scripts/extract_fujian_channels.py
+      
       - name: Commit and push changes
         run: |
           git config --global user.name 'github-actions'
