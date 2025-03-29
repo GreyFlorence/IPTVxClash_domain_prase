@@ -48,7 +48,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
           git add domains.yml ips.yml
           git commit -m "Update domains and IPs from multiple M3U sources" || exit 0
           git push origin HEAD:main
