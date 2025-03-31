@@ -7,7 +7,7 @@
 云霄综合,https://live.zzyxxw.com:2443/live/xwzh.m3u8
 厦门卫视,http://110.80.17.38:9901/tsfile/live/0128_1.m3u8
 厦门卫视,http://123.132.233.194:352/tsfile/live/0119_1.m3u8
-厦门卫视,http://125.42.150.114:9901/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0
+厦门卫视,http://139.129.231.228:50060/rtp/239.21.2.6:5002
 厦门卫视,http://183.11.239.36:808/hls/17/index.m3u8
 厦门卫视,http://1b6467f415.iok.la:9931/tsfile/live/1093_1.m3u8
 厦门卫视,http://60.209.125.254:352/tsfile/live/0119_1.m3u8?ace
