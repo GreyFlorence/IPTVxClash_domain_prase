@@ -9,7 +9,6 @@
 厦门卫视,http://112.123.243.37:50085/tsfile/live/0136_1.m3u8?key=txiptv&playlive=0&authid=0
 厦门卫视,http://123.132.233.194:352/tsfile/live/0119_1.m3u8
 厦门卫视,http://125.42.150.114:9901/tsfile/live/0125_1.m3u8?key=txiptv&playlive=1&authid=0
-厦门卫视,http://139.129.231.228:50060/rtp/239.21.2.6:5002
 厦门卫视,http://183.11.239.36:808/hls/17/index.m3u8
 厦门卫视,http://1b6467f415.iok.la:9931/tsfile/live/1093_1.m3u8
 厦门卫视,http://211.67.191.23/hls/xmtv/index.m3u8
@@ -17,6 +16,7 @@
 厦门卫视,http://76.5432123.xyz/杂项代理/学习强国.php?id=xmws
 厦门卫视,http://dassby.qqff.top:99/live/厦门卫视/index.m3u8
 厦门卫视,http://dl.wifi942.com:66/jsyd/jsyd.php?id=G_XIAMEN
+厦门卫视,http://e1.woc.iiiya.cn:8888/rtp/239.61.2.11:8060
 厦门卫视,http://gmxw.7766.org:808/hls/17/index.m3u8
 厦门卫视,http://home.wwang.pw:35455/itv/1000000005000266006.m3u8?cdn=ystenlive
 厦门卫视,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=1184&tk=e503191f8e20
@@ -45,7 +45,6 @@
 厦门卫视,https://stream1.freetv.fun/dbed63a86040718ec58da63619796d31e0af9afacda7aedd1423aa1af946a7b9.m3u8
 厦门卫视,https://stream1.freetv.fun/f8d1629f014d910f22eba5798df47afb57a1636020d0ef99783649dc37c7a627.m3u8
 厦门卫视,https://stream1.freetv.fun/fa7f6e9ffa48876e0a0c01d13236367138a865a5ebda64b80d0398a29ee8cdb7.m3u8
-厦门卫视,rtsp://118.212.169.207:554/PLTV/88888888/224/3221227298/10000100000000060000000001945823_0.smil
 宁化电视一套,http://fjnhdb.chinashadt.com:2036/live/stream:nh1.stream/playlist.m3u8?fujian
 将乐综合,http://218.106.152.196/lsdream/9nbYeUc/1000/live.m3u8
 将乐综合,http://218.106.152.196/lsdream/9nbYeUc/1000/live.m3u8?fujian
