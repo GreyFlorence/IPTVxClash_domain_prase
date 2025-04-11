@@ -1,7 +1,9 @@
 payload:
+- aegis-cloudfront-1.tubi.video
 - appletree-mytimeau-samsung.amagi.tv
 - bcovlive-a.akamaihd.net
 - cdn-apse1-prod.tsv2.amagi.tv
+- cmc-ono.amagi.tv
 - cord-cutter.net
 - d2e1asnsl7br7b.cloudfront.net
 - d4ybyqrhce41r.cloudfront.net
@@ -20,6 +22,7 @@ payload:
 - live-gbnews.simplestreamcdn.com
 - live-hls-web-aje.getaj.net
 - lovestoriestv-lovestoriestv-1-eu.xiaomi.wurl.tv
+- moviesphereuk-samsunguk.amagi.tv
 - nmxlive.akamaized.net
 - oneamericanews-roku-us.amagi.tv
 - play.google.com
@@ -31,3 +34,4 @@ payload:
 - stream1.freetv.fun
 - travelxp-travelxp-1-eu.xiaomi.wurl.tv
 - upload.wikimedia.org
+- v1.thetvapp.to
