@@ -7,14 +7,12 @@
 云霄综合,https://live.zzyxxw.com:2443/live/xwzh.m3u8
 厦门卫视,http://110.80.17.38:9901/tsfile/live/0128_1.m3u8
 厦门卫视,http://123.132.233.194:352/tsfile/live/0119_1.m3u8
-厦门卫视,http://139.129.231.228:50060/rtp/239.21.2.6:5002
 厦门卫视,http://183.11.239.36:808/hls/17/index.m3u8
 厦门卫视,http://1b6467f415.iok.la:9931/tsfile/live/1093_1.m3u8
 厦门卫视,http://211.67.191.23/hls/xmtv/index.m3u8
 厦门卫视,http://47.122.125.40:6666/hls/xmtv.m3u8
 厦门卫视,http://60.209.125.254:352/tsfile/live/0119_1.m3u8?ace
 厦门卫视,http://76.5432123.xyz/杂项代理/学习强国.php?id=xmws
-厦门卫视,http://800686.xyz:35455/bptv/10000100000000050000000003887454.m3u8
 厦门卫视,http://[2409:8087:3428:20:500::1009]:6610/PLTV/88888888/224/3221226964/index.m3u8?servicetype=1&IASHttpSessionId=RR423820220409134714119178
 厦门卫视,http://[2409:8087:3428:20:500::100f]:6610/PLTV/88888888/224/3221226964/index.m3u8?servicetype=1&IASHttpSessionId=RR423820220409134714119178
 厦门卫视,http://[2409:8087:74F1:0021::0008]/270000001128/9900000058/index.m3u8
@@ -23,6 +21,7 @@
 厦门卫视,http://dl.wifi942.com:66/jsyd/jsyd.php?id=G_XIAMEN
 厦门卫视,http://e1.woc.iiiya.cn:8888/rtp/239.61.2.11:8060
 厦门卫视,http://home.wwang.pw:35455/itv/1000000005000266006.m3u8?cdn=ystenlive
+厦门卫视,http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221227375/index.m3u8
 厦门卫视,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=1184&tk=e503191f8e20
 厦门卫视,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=1194&tk=e640d0a1bf70
 厦门卫视,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=1695&tk=23a9aca1f79f
