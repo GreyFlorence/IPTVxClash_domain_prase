@@ -1,32 +1,34 @@
 import requests
 
-LIVE_URL = "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/live.txt"
+# 原始直播源 URL
+url = "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/live.txt"
+response = requests.get(url)
 
-def extract_fujian_channels():
-    """从 live.txt 提取福建频道的内容"""
-    response = requests.get(LIVE_URL)
-    response.raise_for_status()  # 如果请求失败，抛出异常
-
-    content = response.text
+if response.status_code == 200:
+    lines = response.text.splitlines()
+    
+    # 标记开始与结束的关键词
     start_marker = "☘️福建频道,#genre#"
     end_marker = "☘️甘肃频道,#genre#"
 
-    # 查找标记位置
-    start_index = content.find(start_marker)
-    end_index = content.find(end_marker)
+    # 提取福建频道段落
+    collecting = False
+    extracted_lines = []
 
-    if start_index == -1 or end_index == -1:
-        print("无法找到指定的福建频道区域")
-        return
+    for line in lines:
+        if start_marker in line:
+            collecting = True
+            extracted_lines.append("福建频道,#genre#")  # 替换标题行
+            continue
+        if collecting:
+            if end_marker in line:
+                break
+            extracted_lines.append(line)
 
-    # 提取内容
-    fujian_content = content[start_index:end_index].strip()
-
-    # 将结果写入 fujian_iptv.txt
+    # 写入目标文件
     with open("fujian_iptv.txt", "w", encoding="utf-8") as f:
-        f.write(fujian_content)
+        f.write("\n".join(extracted_lines))
 
-    print("已提取福建频道并保存到 fujian_iptv.txt")
-
-if __name__ == "__main__":
-    extract_fujian_channels()
+    print("✅ 福建频道已成功提取并保存为 fujian_iptv.txt")
+else:
+    print("❌ 获取 live.txt 文件失败。")
