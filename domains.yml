@@ -1,5 +1,7 @@
 payload:
 - aegis-cloudfront-1.tubi.video
+- amg00217-newsmax-newsmax-zeasn-022k9.amagi.tv
+- amg00315-sportsgrid-firetv.amagi.tv
 - amg01131-tracetv-traceurban-glewed-g705j.amagi.tv
 - azonew.newkso.ru
 - bcovlive-a.akamaihd.net
@@ -8,16 +10,14 @@ payload:
 - cdn3.wowza.com
 - cmc-ono.amagi.tv
 - d18dyiwu97wm6q.cloudfront.net
-- d1mumb5jst6zw0.cloudfront.net
 - d2dw21aq0j0l5c.cloudfront.net
 - d2e1asnsl7br7b.cloudfront.net
 - d3696l48vwq25d.cloudfront.net
 - d7x8z4yuq42qn.cloudfront.net
-- damkf751d85s1.cloudfront.net
+- dth07jsr8atug.cloudfront.net
 - fl1.moveonjoy.com
 - fl3.moveonjoy.com
 - fl5.moveonjoy.com
-- food-eu.xiaomi.wurl.tv
 - linear-291.frequency.stream
 - live-hls-web-aje.getaj.net
 - live-pop-ssai.simplestreamcdn.com
@@ -25,6 +25,7 @@ payload:
 - lovestoriestv-lovestoriestv-1-eu.xiaomi.wurl.tv
 - moviesphereuk-samsunguk.amagi.tv
 - nhkworld-tv.akamaized.net
+- pac12-samsungus.amagi.tv
 - rt-glb.rttv.com
 - rt-rtd.rttv.com
 - run-br-uk.otteravision.com
