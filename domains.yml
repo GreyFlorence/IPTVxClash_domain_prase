@@ -4,6 +4,7 @@ payload:
 - bcovlive-a.akamaihd.net
 - bozztv.com
 - brandusa-gousa-1-nl.samsung.wurl.tv
+- cdn-apse1-prod.tsv2.amagi.tv
 - cdn.132.us.kg
 - cdn1host.online
 - cdn3.132.us.kg
@@ -18,7 +19,10 @@ payload:
 - fl3.moveonjoy.com
 - fl5.moveonjoy.com
 - jmp2.uk
+- lightning-traceurban-samsungau.amagi.tv
 - live-hls-web-aje.getaj.net
+- live-talktv-ssai.simplestreamcdn.com
+- live.france24.com
 - livetv-fa.tubi.video
 - lovestoriestv-lovestoriestv-1-eu.xiaomi.wurl.tv
 - moviesphereuk-samsunguk.amagi.tv
@@ -29,6 +33,7 @@ payload:
 - run-br-uk.otteravision.com
 - tastemade-xumo.amagi.tv
 - travelxp-travelxp-1-eu.xiaomi.wurl.tv
+- vs-hls-push-ww-live.akamaized.net
 - wikinew.newkso.ru
 - wildearth-plex.amagi.tv
 - x4new.newkso.ru
