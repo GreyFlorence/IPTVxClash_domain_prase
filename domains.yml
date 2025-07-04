@@ -6,6 +6,7 @@ payload:
 - cdn-apse1-prod.tsv2.amagi.tv
 - cdn1host.online
 - cdn3.wowza.com
+- cdntv.tbs.seoul.kr
 - d18dyiwu97wm6q.cloudfront.net
 - d2e1asnsl7br7b.cloudfront.net
 - d7x8z4yuq42qn.cloudfront.net
@@ -14,6 +15,7 @@ payload:
 - fl1.moveonjoy.com
 - fl3.moveonjoy.com
 - fl5.moveonjoy.com
+- hlive.ktv.go.kr
 - jmp2.uk
 - lightning-traceurban-samsungau.amagi.tv
 - live-hls-web-aje.getaj.net
@@ -21,6 +23,7 @@ payload:
 - live.france24.com
 - livetv-fa.tubi.video
 - lovestoriestv-lovestoriestv-1-eu.xiaomi.wurl.tv
+- mgugaklive.nowcdn.co.kr
 - moviesphereuk-samsunguk.amagi.tv
 - nhkworld-tv.akamaized.net
 - pac12-samsungus.amagi.tv
@@ -28,6 +31,7 @@ payload:
 - rt-rtd.rttv.com
 - tastemade-xumo.amagi.tv
 - travelxp-travelxp-1-eu.xiaomi.wurl.tv
+- vod.mpmbc.co.kr
 - vs-hls-push-ww-live.akamaized.net
 - wikinew.newkso.ru
 - wildearth-plex.amagi.tv
