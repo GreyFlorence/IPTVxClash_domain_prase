@@ -1,9 +1,11 @@
 payload:
 - abc-news-dmd-streams-1.akamaized.net
 - aegis-cloudfront-1.tubi.video
+- amdlive-ch01-ctnd-com.akamaized.net
 - bcovlive-a.akamaihd.net
 - brandusa-gousa-1-nl.samsung.wurl.tv
 - cdn-apse1-prod.tsv2.amagi.tv
+- cdn-uw2-prod.tsv2.amagi.tv
 - cdn1host.online
 - cdn3.wowza.com
 - cdntv.tbs.seoul.kr
@@ -12,11 +14,14 @@ payload:
 - d7x8z4yuq42qn.cloudfront.net
 - dfhsahpa45kk2.cloudfront.net
 - dth07jsr8atug.cloudfront.net
+- dwamdstream102.akamaized.net
 - fl1.moveonjoy.com
 - fl3.moveonjoy.com
 - fl5.moveonjoy.com
 - hlive.ktv.go.kr
+- jansonmedia-kidstv-1-us.xiaomi.wurl.tv
 - jmp2.uk
+- lightning-pulse-xiaomi.amagi.tv
 - lightning-traceurban-samsungau.amagi.tv
 - live-hls-web-aje.getaj.net
 - live-talktv-ssai.simplestreamcdn.com
@@ -30,6 +35,7 @@ payload:
 - rt-glb.rttv.com
 - rt-rtd.rttv.com
 - tastemade-xumo.amagi.tv
+- tedconferences-ted-1-eu.xiaomi.wurl.tv
 - travelxp-travelxp-1-eu.xiaomi.wurl.tv
 - vod.mpmbc.co.kr
 - vs-hls-push-ww-live.akamaized.net
