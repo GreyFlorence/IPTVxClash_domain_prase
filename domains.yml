@@ -7,7 +7,6 @@ payload:
 - amdlive-ch01-ctnd-com.akamaized.net
 - bcovlive-a.akamaihd.net
 - bozztv.com
-- cb2b444d.wurl.com
 - cdntv.tbs.seoul.kr
 - cheddar-us.samsung.wurl.tv
 - d2e1asnsl7br7b.cloudfront.net
@@ -22,9 +21,9 @@ payload:
 - live.corusdigitaldev.com
 - moviesphereuk-samsunguk.amagi.tv
 - mwyceyp.mhubery.xyz
+- nhkworld-tv.akamaized.net
 - nmxlive.akamaized.net
 - panelguys.top
 - rt-rtd.rttv.com
 - tv.zapping.life
 - user.scalecdn.co
-- vs-hls-push-ww-live.akamaized.net
