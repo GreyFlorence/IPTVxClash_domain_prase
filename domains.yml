@@ -4,8 +4,10 @@ payload:
 - 547f72e6652371c3.mediapackage.us-east-1.amazonaws.com
 - 68f6dfd1f2bd415b9c42f1d383004b69.mediatailor.eu-west-1.amazonaws.com
 - 9be783d652cd4b099cf63e1dc134c4a3.mediatailor.eu-west-1.amazonaws.com
+- a62dad94.wurl.com
 - amdlive-ch01-ctnd-com.akamaized.net
 - bcovlive-a.akamaihd.net
+- bein-xtra-xumo.amagi.tv
 - bloomberg-bloombergtv-1-gb.samsung.wurl.tv
 - bozztv.com
 - cdn-apse1-prod.tsv2.amagi.tv
@@ -22,7 +24,7 @@ payload:
 - fl1001.bozztv.com
 - fl3.moveonjoy.com
 - fl5.moveonjoy.com
-- jmp2.uk
+- lightning-tracesport-samsungau.amagi.tv
 - live-hls-web-aje.getaj.net
 - live.corusdigitaldev.com
 - moviesphereuk-samsunguk.amagi.tv
@@ -30,8 +32,9 @@ payload:
 - nmxlive.akamaized.net
 - panelguys.top
 - rbmn-live.akamaized.net
+- restream-live.realiptv.to
 - rt-rtd.rttv.com
-- turnerlive.warnermediacdn.com
 - tv.zapping.life
 - user.scalecdn.co
 - vs-hls-push-ww-live.akamaized.net
+- world-proxifier.xyz
