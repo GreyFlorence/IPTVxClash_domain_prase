@@ -51,6 +51,7 @@ payload:
 - ec613694ee5049d3b8f30913b619662e.mediatailor.us-west-2.amazonaws.com
 - fee09fd665814f51b939b6d106cf5f66.mediatailor.eu-west-1.amazonaws.com
 - fl1001.bozztv.com
+- hlive.ktv.go.kr
 - image.xumo.com
 - images-0.rakuten.tv
 - images-1.rakuten.tv
@@ -64,6 +65,8 @@ payload:
 - lightning-traceurban-samsungau.amagi.tv
 - live-hls-web-aje.getaj.net
 - live.corusdigitaldev.com
+- mediaworks.dema.mil.kr
+- mgugaklive.nowcdn.co.kr
 - moviesphereuk-samsunguk.amagi.tv
 - nvsoo4tx.megogo.xyz
 - pbs2-pull-secure.akamaized.net
