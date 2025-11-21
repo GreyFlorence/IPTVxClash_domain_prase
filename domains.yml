@@ -5,7 +5,6 @@ payload:
 - 2e90a1efd576492a8eaf4364feedf8d5.mediatailor.us-east-1.amazonaws.com
 - 339597f8.wurl.com
 - 339a32f2.wurl.com
-- 3a542e42.wurl.com
 - 488f4ce4.wurl.com
 - 52405cd167dc41c68edcaa842b916ccd.mediatailor.us-east-1.amazonaws.com
 - 52aad07d9d4f4d479d9b27e08ddf9e8b.mediatailor.us-west-2.amazonaws.com
@@ -63,7 +62,6 @@ payload:
 - lightning-fnf-samsungaus.amagi.tv
 - lightning-tracesport-samsungau.amagi.tv
 - lightning-traceurban-samsungau.amagi.tv
-- live-hls-web-aje.getaj.net
 - live.corusdigitaldev.com
 - mediaworks.dema.mil.kr
 - mgugaklive.nowcdn.co.kr
@@ -80,6 +78,7 @@ payload:
 - thriller-rakuten-tv-uk.fast.rakuten.tv
 - travelxp-travelxp-1-au.samsung.wurl.tv
 - tv-trtworld.medya.trt.com.tr
+- vs-hls-push-ww-live.akamaized.net
 - wildearth-plex.amagi.tv
 - wurl120sports.global.transmit.live
 - wurlcineverse.global.transmit.live
