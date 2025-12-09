@@ -14,10 +14,8 @@ payload:
 - 7ed93f662af44c2e9bdf93b56464f6a8.mediatailor.us-east-1.amazonaws.com
 - 89514e758f814907be6d14bbc0aa66b7.mediatailor.us-west-2.amazonaws.com
 - 8a4805800dac428ebbf1d3cde0cdcf87.mediatailor.us-west-2.amazonaws.com
-- 967d9da6.wurl.com
 - 9be783d652cd4b099cf63e1dc134c4a3.mediatailor.eu-west-1.amazonaws.com
 - 9f8e2ffcd87f4c469be7194e48f84874.mediatailor.us-west-2.amazonaws.com
-- ab352235.wurl.com
 - ad6cad3b.wurl.com
 - ads.its-newid.net
 - af7a8b4e.wurl.com
@@ -34,6 +32,7 @@ payload:
 - cdn-apse1-prod.tsv2.amagi.tv
 - cdn-ue1-prod.tsv2.amagi.tv
 - cdn-uw2-prod.tsv2.amagi.tv
+- cdn.iptvboss.pro
 - cdn88-accio.its-newid.net
 - cheddar-us.samsung.wurl.tv
 - d1biytugnv36sr.cloudfront.net
