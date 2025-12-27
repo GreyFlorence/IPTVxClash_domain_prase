@@ -1,6 +1,7 @@
 payload:
 - 0145451975a64b35866170fd2e8fa486.mediatailor.eu-west-1.amazonaws.com
 - 09e3020901654256a51f2f2e9213765a.mediatailor.us-east-1.amazonaws.com
+- 1tv41.icu
 - 2d1ef59f0ad34d14888d8abce1b99264.mediatailor.us-east-1.amazonaws.com
 - 2e90a1efd576492a8eaf4364feedf8d5.mediatailor.us-east-1.amazonaws.com
 - 52405cd167dc41c68edcaa842b916ccd.mediatailor.us-east-1.amazonaws.com
@@ -29,10 +30,11 @@ payload:
 - cord-cutter.net
 - cors-proxy.cooks.fyi
 - d2e1asnsl7br7b.cloudfront.net
-- d2w9q46ikgrcwx.cloudfront.net
 - d35j504z0x2vu2.cloudfront.net
+- d3pxo1qcgzxtxs.cloudfront.net
 - d4whmvwm0rdvi.cloudfront.net
 - d7x8z4yuq42qn.cloudfront.net
+- ds2c506obo7m8.cloudfront.net
 - ec613694ee5049d3b8f30913b619662e.mediatailor.us-west-2.amazonaws.com
 - fee09fd665814f51b939b6d106cf5f66.mediatailor.eu-west-1.amazonaws.com
 - fl1.moveonjoy.com
@@ -47,14 +49,17 @@ payload:
 - live.corusdigitaldev.com
 - livehub-voidnet.onrender.com
 - moviesphereuk-samsunguk.amagi.tv
+- nmx1ota.akamaized.net
+- nocable.cc
 - nvsoo4tx.megogo.xyz
-- pbs2-pull-secure.akamaized.net
+- panelguys.top
 - powerserver.ottc.pro
 - rbmn-live.akamaized.net
 - romance-rakuten-tv-uk.fast.rakuten.tv
 - rt-glb.rttv.com
 - rt-rtd.rttv.com
 - sci-fi-rakuten-tv-uk.fast.rakuten.tv
+- stalker.klma2023.net
 - stream.ads.ottera.tv
 - streamer2.nexgen.bz
 - supersonictv.live
@@ -63,9 +68,4 @@ payload:
 - tv-trtworld.medya.trt.com.tr
 - vs-hls-push-ww-live.akamaized.net
 - wildearth-plex.amagi.tv
-- wurl120sports.global.transmit.live
 - wurlcineverse.global.transmit.live
-- wurlewscripps.global.transmit.live
-- wurllg.global.transmit.live
-- wurlnews12ny.global.transmit.live
-- wurlrainbowmedia.global.transmit.live
