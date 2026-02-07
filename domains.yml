@@ -18,7 +18,6 @@ payload:
 - ads.its-newid.net
 - amdlive-ch01-ctnd-com.akamaized.net
 - appletree-mytimeau-samsung.amagi.tv
-- bcovlive-a.akamaihd.net
 - bozztv.com
 - cc2b7c60df304389ba60c76790d1a82f.mediatailor.us-east-1.amazonaws.com
 - cdn-apse1-prod.tsv2.amagi.tv
@@ -26,8 +25,6 @@ payload:
 - cdn-uw2-prod.tsv2.amagi.tv
 - content.uplynk.com
 - d2e1asnsl7br7b.cloudfront.net
-- d2qa45tniogkj6.cloudfront.net
-- d35j504z0x2vu2.cloudfront.net
 - d4whmvwm0rdvi.cloudfront.net
 - d7x8z4yuq42qn.cloudfront.net
 - ec613694ee5049d3b8f30913b619662e.mediatailor.us-west-2.amazonaws.com
@@ -51,12 +48,10 @@ payload:
 - rt-rtd.rttv.com
 - sci-fi-rakuten-tv-uk.fast.rakuten.tv
 - stream.ads.ottera.tv
-- streamer.nexyl.uk
 - thefirst-oando.amagi.tv
 - thriller-rakuten-tv-uk.fast.rakuten.tv
 - turnerlive.warnermediacdn.com
 - tv-trtworld.medya.trt.com.tr
-- viamotionhsi.netplus.ch
 - vs-hls-push-ww-live.akamaized.net
 - wildearth-plex.amagi.tv
 - wurlcineverse.global.transmit.live
