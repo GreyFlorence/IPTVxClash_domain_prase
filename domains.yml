@@ -1,7 +1,6 @@
 payload:
 - 0145451975a64b35866170fd2e8fa486.mediatailor.eu-west-1.amazonaws.com
 - 09e3020901654256a51f2f2e9213765a.mediatailor.us-east-1.amazonaws.com
-- 1cd69008d08c486ca5abc0f1c4e2ef63.mediatailor.ap-northeast-1.amazonaws.com
 - 1tv41.icu
 - 2e90a1efd576492a8eaf4364feedf8d5.mediatailor.us-east-1.amazonaws.com
 - 52405cd167dc41c68edcaa842b916ccd.mediatailor.us-east-1.amazonaws.com
@@ -27,11 +26,9 @@ payload:
 - cdn-apse1-prod.tsv2.amagi.tv
 - cdn-ue1-prod.tsv2.amagi.tv
 - cdn-uw2-prod.tsv2.amagi.tv
-- cdns.jp-primehome.com
 - d25tgymtnqzu8s.cloudfront.net
 - d2e1asnsl7br7b.cloudfront.net
 - d2n0069hmnqmmx.cloudfront.net
-- d35j504z0x2vu2.cloudfront.net
 - d39chvnxm26pgp.cloudfront.net
 - d3b6luslimvglo.cloudfront.net
 - d4whmvwm0rdvi.cloudfront.net
@@ -41,7 +38,6 @@ payload:
 - fee09fd665814f51b939b6d106cf5f66.mediatailor.eu-west-1.amazonaws.com
 - fl1001.bozztv.com
 - i.imgur.com
-- jiotvimages.cdn.jio.com
 - jmp2.uk
 - lightning-fnf-samsungaus.amagi.tv
 - lightning-tracesport-samsungau.amagi.tv
